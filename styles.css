@@ -172,8 +172,8 @@ body {
 }
 
 .cta-button {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #000000;
     border: none;
     padding: 1rem 2.5rem;
     font-size: 1.1rem;
@@ -186,7 +186,8 @@ body {
 
 .cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(38, 255, 119, 0.4);
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.4);
+    background-color: #f0f0f0;
 }
 
 /* ============================================
