@@ -173,7 +173,7 @@ body {
 
 .cta-button {
     background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    color: #000;
+    color: #ffffff;
     border: none;
     padding: 1rem 2.5rem;
     font-size: 1.1rem;
