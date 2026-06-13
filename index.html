@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BudgetFlow - Smart Money Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">💰</span>
+                <span class="logo-text">BudgetFlow</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+                <li><a href="#budget" class="nav-link" data-section="budget">Budget Calculator</a></li>
+                <li><a href="#tracker" class="nav-link" data-section="tracker">Expense Tracker</a></li>
+                <li><a href="#savings" class="nav-link" data-section="savings">Savings Goal</a></li>
+                <li><a href="#subscriptions" class="nav-link" data-section="subscriptions">Subscriptions</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section active">
+        <div class="hero">
+            <h1>Take Control of Your Money</h1>
+            <p>BudgetFlow helps you track expenses, manage subscriptions, and build a better financial future</p>
+            <button class="cta-button" onclick="switchSection('budget')">Get Started</button>
+        </div>
+        
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Smart Budget Calculator</h3>
+                <p>Create personalized budgets based on your income and expenses</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💸</div>
+                <h3>Expense Tracking</h3>
+                <p>Track your spending by category and monitor your progress</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Savings Goals</h3>
+                <p>Set and achieve your financial goals with progress tracking</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔔</div>
+                <h3>Subscription Manager</h3>
+                <p>Never forget a subscription fee - manage them all in one place</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Budget Calculator Section -->
+    <section id="budget" class="section">
+        <div class="container">
+            <h2>Budget Calculator</h2>
+            <p class="section-subtitle">Plan your finances with a personalized budget</p>
+            
+            <div class="calculator-grid">
+                <div class="calculator-card">
+                    <h3>Monthly Income</h3>
+                    <input type="number" id="monthlyIncome" placeholder="Enter your monthly income" min="0" step="0.01">
+                    <small>After taxes</small>
+                </div>
+
+                <div class="calculator-card">
+                    <h3>Fixed Expenses</h3>
+                    <div class="input-group">
+                        <label>Rent/Mortgage</label>
+                        <input type="number" placeholder="0.00" min="0" step="0.01" class="expense-input" data-category="rent">
+                    </div>
+                    <div class="input-group">
+                        <label>Utilities</label>
+                        <input type="number" placeholder="0.00" min="0" step="0.01" class="expense-input" data-category="utilities">
+                    </div>
+                    <div class="input-group">
+                        <label>Insurance</label>
+                        <input type="number" placeholder="0.00" min="0" step="0.01" class="expense-input" data-category="insurance">
+                    </div>
+                </div>
+
+                <div class="calculator-card">
+                    <h3>Variable Expenses</h3>
+                    <div class="input-group">
+                        <label>Groceries</label>
+                        <input type="number" placeholder="0.00" min="0" step="0.01" class="expense-input" data-category="groceries">
+                    </div>
+                    <div class="input-group">
+                        <label>Transportation</label>
+                        <input type="number" placeholder="0.00" min="0" step="0.01" class="expense-input" data-category="transportation">
+                    </div>
+                    <div class="input-group">
+                        <label>Entertainment</label>
+                        <input type="number" placeholder="0.00" min="0" step="0.01" class="expense-input" data-category="entertainment">
+                    </div>
+                </div>
+            </div>
+
+            <button class="calculate-btn" onclick="calculateBudget()">Calculate Budget</button>
+
+            <div id="budgetResults" class="results hidden">
+                <div class="result-card income-card">
+                    <h4>Total Income</h4>
+                    <p class="result-value" id="totalIncome">$0.00</p>
+                </div>
+                <div class="result-card expense-card">
+                    <h4>Total Expenses</h4>
+                    <p class="result-value" id="totalExpenses">$0.00</p>
+                </div>
+                <div class="result-card balance-card">
+                    <h4>Remaining Balance</h4>
+                    <p class="result-value" id="remainingBalance">$0.00</p>
+                </div>
+
+                <div class="budget-breakdown">
+                    <h4>Budget Breakdown</h4>
+                    <div id="budgetChart" class="chart"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expense Tracker Section -->
+    <section id="tracker" class="section">
+        <div class="container">
+            <h2>Expense Tracker</h2>
+            <p class="section-subtitle">Track and analyze your daily expenses</p>
+
+            <div class="tracker-input">
+                <div class="input-group">
+                    <label>Expense Description</label>
+                    <input type="text" id="expenseDescription" placeholder="e.g., Coffee at Starbucks">
+                </div>
+                <div class="input-group">
+                    <label>Amount</label>
+                    <input type="number" id="expenseAmount" placeholder="0.00" min="0" step="0.01">
+                </div>
+                <div class="input-group">
+                    <label>Category</label>
+                    <select id="expenseCategory">
+                        <option value="food">🍔 Food & Dining</option>
+                        <option value="transportation">🚗 Transportation</option>
+                        <option value="entertainment">🎬 Entertainment</option>
+                        <option value="shopping">🛍️ Shopping</option>
+                        <option value="utilities">⚡ Utilities</option>
+                        <option value="health">🏥 Health & Fitness</option>
+                        <option value="education">📚 Education</option>
+                        <option value="other">📌 Other</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Date</label>
+                    <input type="date" id="expenseDate">
+                </div>
+                <button class="add-btn" onclick="addExpense()">Add Expense</button>
+            </div>
+
+            <div class="tracker-stats">
+                <div class="stat-card">
+                    <h4>Total Spent</h4>
+                    <p id="totalSpent">$0.00</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Number of Expenses</h4>
+                    <p id="expenseCount">0</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Average Expense</h4>
+                    <p id="avgExpense">$0.00</p>
+                </div>
+            </div>
+
+            <div class="tracker-section">
+                <h4>Expenses by Category</h4>
+                <div id="categoryChart" class="chart"></div>
+            </div>
+
+            <div class="tracker-section">
+                <div class="section-header">
+                    <h4>Recent Expenses</h4>
+                    <button class="clear-btn" onclick="clearAllExpenses()" title="Clear all expenses">🗑️ Clear</button>
+                </div>
+                <table class="expense-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Description</th>
+                            <th>Category</th>
+                            <th>Amount</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="expenseList">
+                        <tr class="empty-row">
+                            <td colspan="5">No expenses yet. Start by adding one!</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Savings Goal Section -->
+    <section id="savings" class="section">
+        <div class="container">
+            <h2>Savings Goals</h2>
+            <p class="section-subtitle">Set targets and track your progress toward financial goals</p>
+
+            <div class="savings-input">
+                <div class="input-group">
+                    <label>Goal Name</label>
+                    <input type="text" id="goalName" placeholder="e.g., Emergency Fund, Vacation">
+                </div>
+                <div class="input-group">
+                    <label>Target Amount</label>
+                    <input type="number" id="goalTarget" placeholder="0.00" min="0" step="0.01">
+                </div>
+                <div class="input-group">
+                    <label>Current Amount</label>
+                    <input type="number" id="goalCurrent" placeholder="0.00" min="0" step="0.01">
+                </div>
+                <div class="input-group">
+                    <label>Target Date</label>
+                    <input type="date" id="goalDate">
+                </div>
+                <button class="add-btn" onclick="addSavingsGoal()">Add Goal</button>
+            </div>
+
+            <div id="goalsList" class="goals-list">
+                <div class="empty-state">
+                    <p>No savings goals yet. Create one to get started!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscriptions Section -->
+    <section id="subscriptions" class="section">
+        <div class="container">
+            <h2>Subscription Manager</h2>
+            <p class="section-subtitle">Track and manage all your subscriptions in one place</p>
+
+            <div class="subscription-input">
+                <div class="input-group">
+                    <label>Service Name</label>
+                    <input type="text" id="subName" placeholder="e.g., Netflix, Spotify">
+                </div>
+                <div class="input-group">
+                    <label>Monthly Cost</label>
+                    <input type="number" id="subCost" placeholder="0.00" min="0" step="0.01">
+                </div>
+                <div class="input-group">
+                    <label>Billing Cycle</label>
+                    <select id="subBillingCycle">
+                        <option value="monthly">Monthly</option>
+                        <option value="quarterly">Quarterly</option>
+                        <option value="annual">Annual</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Next Billing Date</label>
+                    <input type="date" id="subBillingDate">
+                </div>
+                <button class="add-btn" onclick="addSubscription()">Add Subscription</button>
+            </div>
+
+            <div class="subscription-summary">
+                <div class="summary-card">
+                    <h4>Monthly Cost</h4>
+                    <p id="monthlyCost">$0.00</p>
+                </div>
+                <div class="summary-card">
+                    <h4>Annual Cost</h4>
+                    <p id="annualCost">$0.00</p>
+                </div>
+                <div class="summary-card">
+                    <h4>Active Subscriptions</h4>
+                    <p id="subCount">0</p>
+                </div>
+            </div>
+
+            <div class="subscriptions-list">
+                <div class="section-header">
+                    <h4>Your Subscriptions</h4>
+                    <button class="clear-btn" onclick="clearAllSubscriptions()" title="Clear all subscriptions">🗑️ Clear</button>
+                </div>
+                <div id="subList" class="subs-container">
+                    <div class="empty-state">
+                        <p>No subscriptions added yet. Start tracking them!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 BudgetFlow. Helping you manage your finances wisely. | Privacy Policy | Terms of Service</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
