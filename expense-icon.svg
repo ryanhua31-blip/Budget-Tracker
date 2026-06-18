@@ -1,0 +1,19 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="200" height="200" fill="#26FF77" opacity="0.1" rx="20"/>
+  
+  <!-- Money bills -->
+  <g transform="translate(50, 50)">
+    <!-- Bill 1 -->
+    <rect x="10" y="5" width="60" height="35" fill="#26FF77" stroke="#26FF77" stroke-width="2" rx="4"/>
+    <text x="40" y="28" font-size="20" font-weight="bold" fill="#0f0f0f" text-anchor="middle">$</text>
+    
+    <!-- Bill 2 -->
+    <rect x="25" y="25" width="60" height="35" fill="#4dff99" stroke="#26FF77" stroke-width="2" rx="4"/>
+    <text x="55" y="48" font-size="20" font-weight="bold" fill="#0f0f0f" text-anchor="middle">$</text>
+    
+    <!-- Bill 3 -->
+    <rect x="40" y="45" width="60" height="35" fill="#26FF77" stroke="#26FF77" stroke-width="2" rx="4"/>
+    <text x="70" y="68" font-size="20" font-weight="bold" fill="#0f0f0f" text-anchor="middle">$</text>
+  </g>
+</svg>
