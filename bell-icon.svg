@@ -1,0 +1,20 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="200" height="200" fill="#26FF77" opacity="0.1" rx="20"/>
+  
+  <!-- Bell -->
+  <g transform="translate(100, 100)">
+    <!-- Bell body -->
+    <path d="M -25 -10 Q -35 10 -35 25 Q -35 35 -25 40 L 25 40 Q 35 35 35 25 Q 35 10 25 -10 Z" fill="#26FF77" stroke="#26FF77" stroke-width="2"/>
+    
+    <!-- Bell curve top -->
+    <path d="M -25 -10 Q 0 -25 25 -10" fill="none" stroke="#26FF77" stroke-width="2"/>
+    
+    <!-- Clapper -->
+    <ellipse cx="0" cy="8" rx="6" ry="12" fill="#4dff99"/>
+    
+    <!-- Notification dot -->
+    <circle cx="22" cy="-20" r="10" fill="#ef4444"/>
+    <circle cx="22" cy="-20" r="6" fill="#ff6b6b"/>
+  </g>
+</svg>
