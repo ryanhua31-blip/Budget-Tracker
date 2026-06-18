@@ -1,0 +1,19 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="200" height="200" fill="#26FF77" opacity="0.1" rx="20"/>
+  
+  <!-- Target circles -->
+  <g transform="translate(100, 100)">
+    <!-- Outer circle -->
+    <circle cx="0" cy="0" r="60" fill="none" stroke="#26FF77" stroke-width="3"/>
+    
+    <!-- Middle circle -->
+    <circle cx="0" cy="0" r="40" fill="none" stroke="#4dff99" stroke-width="3"/>
+    
+    <!-- Inner circle (bullseye) -->
+    <circle cx="0" cy="0" r="20" fill="#26FF77"/>
+    
+    <!-- Center dot -->
+    <circle cx="0" cy="0" r="8" fill="#0f0f0f"/>
+  </g>
+</svg>
