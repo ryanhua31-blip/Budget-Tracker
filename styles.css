@@ -66,13 +66,26 @@ body {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: var(--primary-color);
 }
 
 .logo-icon {
-    font-size: 2rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    background-color: rgba(38, 255, 119, 0.15);
+}
+
+.logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .nav-menu {
@@ -87,6 +100,7 @@ body {
     font-weight: 500;
     transition: var(--transition);
     position: relative;
+    font-size: 0.95rem;
 }
 
 .nav-link:hover,
@@ -205,30 +219,46 @@ body {
     background-color: var(--bg-secondary);
     padding: 2rem;
     border-radius: 12px;
-    text-align: center;
-    box-shadow: var(--shadow-md);
-    transition: var(--transition);
     border: 1px solid var(--border-color);
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
 }
 
 .feature-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-5px);
     border-color: var(--primary-color);
+    box-shadow: 0 8px 16px rgba(38, 255, 119, 0.2);
 }
 
 .feature-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    background: linear-gradient(135deg, rgba(38, 255, 119, 0.1), rgba(38, 255, 119, 0.05));
+    border-radius: 12px;
+    border: 1px solid rgba(38, 255, 119, 0.2);
+}
+
+.feature-icon img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
 }
 
 .feature-card h3 {
-    margin-bottom: 0.5rem;
     color: var(--text-primary);
+    margin-bottom: 0.75rem;
+    font-size: 1.3rem;
 }
 
 .feature-card p {
     color: var(--text-body);
+    font-size: 0.95rem;
 }
 
 /* ============================================
@@ -250,10 +280,6 @@ section h2 {
 section h4 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
-    color: var(--text-primary);
-}
-
-h3, h5 {
     color: var(--text-primary);
 }
 
@@ -282,8 +308,8 @@ select {
     border-radius: 8px;
     font-size: 1rem;
     transition: var(--transition);
-    background-color: var(--bg-secondary);
-    color: var(--text-body);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
 }
 
 input[type="text"]:focus,
@@ -292,17 +318,16 @@ input[type="date"]:focus,
 select:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(38, 255, 119, 0.2);
+    box-shadow: 0 0 0 3px rgba(38, 255, 119, 0.1);
 }
 
 input[type="text"]::placeholder,
 input[type="number"]::placeholder {
-    color: var(--text-body);
-    opacity: 0.6;
+    color: #888;
 }
 
 small {
-    color: var(--text-body);
+    color: var(--text-secondary);
     font-size: 0.85rem;
 }
 
@@ -313,7 +338,7 @@ small {
 .calculate-btn,
 .add-btn {
     background-color: var(--primary-color);
-    color: #000;
+    color: #000000;
     border: none;
     padding: 0.75rem 2rem;
     border-radius: 8px;
@@ -366,13 +391,16 @@ small {
 }
 
 .calculator-card {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary);
     padding: 2rem;
     border-radius: 12px;
     box-shadow: var(--shadow-md);
     border-left: 4px solid var(--primary-color);
-    border: 1px solid var(--border-color);
-    border-left: 4px solid var(--primary-color);
+}
+
+.calculator-card h3 {
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
 }
 
 .results {
@@ -387,17 +415,16 @@ small {
 }
 
 .result-card {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary);
     padding: 1.5rem;
     border-radius: 12px;
     box-shadow: var(--shadow-md);
     text-align: center;
-    border: 1px solid var(--border-color);
 }
 
 .result-card h4 {
     margin-bottom: 1rem;
-    color: var(--text-primary);
+    color: var(--text-secondary);
     font-size: 0.95rem;
     font-weight: 600;
 }
@@ -433,11 +460,10 @@ small {
 
 .budget-breakdown {
     grid-column: 1 / -1;
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary);
     padding: 2rem;
     border-radius: 12px;
     box-shadow: var(--shadow-md);
-    border: 1px solid var(--border-color);
 }
 
 .budget-breakdown h4 {
@@ -464,7 +490,6 @@ small {
     width: 120px;
     font-weight: 600;
     font-size: 0.9rem;
-    color: var(--text-body);
 }
 
 .chart-bar {
@@ -478,7 +503,7 @@ small {
 
 .chart-value {
     padding: 0.25rem 0.5rem;
-    color: #000;
+    color: #000000;
     font-size: 0.85rem;
     font-weight: 600;
     line-height: 30px;
@@ -497,7 +522,6 @@ small {
     border-radius: 12px;
     box-shadow: var(--shadow-md);
     margin-bottom: 2rem;
-    border: 1px solid var(--border-color);
 }
 
 .tracker-stats {
@@ -509,7 +533,7 @@ small {
 
 .stat-card {
     background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    color: #000;
+    color: #000000;
     padding: 1.5rem;
     border-radius: 12px;
     text-align: center;
@@ -517,24 +541,23 @@ small {
 }
 
 .stat-card h4 {
-    font-size: 0.95rem;
+    color: #000000;
     margin-bottom: 0.5rem;
-    color: #000;
+    font-size: 0.9rem;
 }
 
 .stat-card p {
+    color: #000000;
     font-size: 1.8rem;
     font-weight: 700;
-    color: #000;
 }
 
 .tracker-section {
-    background-color: var(--bg-secondary);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: var(--shadow-md);
-    margin-bottom: 2rem;
-    border: 1px solid var(--border-color);
+    margin-top: 3rem;
+}
+
+.tracker-section h4 {
+    margin-bottom: 1.5rem;
 }
 
 .section-header {
@@ -544,13 +567,21 @@ small {
     margin-bottom: 1.5rem;
 }
 
+.section-header h4 {
+    margin: 0;
+}
+
 /* ============================================
-   Expense Table
+   Table Styles
    ============================================ */
 
 .expense-table {
     width: 100%;
     border-collapse: collapse;
+    background-color: var(--bg-secondary);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
 }
 
 .expense-table thead {
@@ -558,17 +589,17 @@ small {
 }
 
 .expense-table th {
+    color: var(--text-secondary);
     padding: 1rem;
     text-align: left;
     font-weight: 600;
-    color: var(--text-primary);
     border-bottom: 2px solid var(--border-color);
 }
 
 .expense-table td {
+    color: var(--text-body);
     padding: 1rem;
     border-bottom: 1px solid var(--border-color);
-    color: var(--text-body);
 }
 
 .expense-table tbody tr:hover {
@@ -581,259 +612,169 @@ small {
 
 .empty-row td {
     text-align: center;
-    color: var(--text-body);
-    padding: 2rem 1rem;
+    padding: 2rem;
+    color: #888;
+}
+
+.delete-btn {
+    background-color: var(--danger-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: var(--transition);
+}
+
+.delete-btn:hover {
+    background-color: #ff5555;
 }
 
 /* ============================================
    Savings Goals Section
    ============================================ */
 
-.savings-input {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    background-color: var(--bg-secondary);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: var(--shadow-md);
-    margin-bottom: 2rem;
-    border: 1px solid var(--border-color);
-}
-
 .goals-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
+    margin-top: 2rem;
 }
 
 .goal-card {
     background-color: var(--bg-secondary);
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: var(--shadow-md);
-    border-left: 4px solid var(--success-color);
     border: 1px solid var(--border-color);
-    border-left: 4px solid var(--success-color);
+    box-shadow: var(--shadow-sm);
 }
 
 .goal-card h4 {
-    margin-bottom: 1rem;
     color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.goal-progress {
+    background-color: var(--bg-primary);
+    border-radius: 8px;
+    height: 12px;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.goal-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+    border-radius: 8px;
+    transition: var(--transition);
 }
 
 .goal-info {
     display: flex;
     justify-content: space-between;
     margin-bottom: 1rem;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 .goal-info span {
     color: var(--text-body);
 }
 
-.goal-amount {
-    font-weight: 600;
-    color: var(--text-body);
-}
-
-.progress-bar {
-    width: 100%;
-    height: 8px;
-    background-color: var(--bg-tertiary);
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 0.5rem;
-}
-
-.progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--success-color), #26FF7750);
-    border-radius: 10px;
-    transition: width 0.3s ease;
-}
-
-.progress-text {
-    font-size: 0.85rem;
-    color: var(--text-body);
-    text-align: right;
-}
-
-.goal-actions {
-    display: flex;
-    gap: 0.5rem;
-    margin-top: 1rem;
-}
-
-.goal-actions button {
-    flex: 1;
-    padding: 0.5rem;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: var(--transition);
-}
-
-.update-btn {
-    background-color: var(--info-color);
-    color: white;
-}
-
-.update-btn:hover {
-    background-color: #2563eb;
-}
-
-.remove-goal-btn {
-    background-color: var(--danger-color);
-    color: white;
-}
-
-.remove-goal-btn:hover {
-    background-color: #dc2626;
+.empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem 2rem;
+    background-color: var(--bg-secondary);
+    border-radius: 12px;
+    border: 1px dashed var(--border-color);
+    color: #888;
 }
 
 /* ============================================
    Subscriptions Section
    ============================================ */
 
-.subscription-input {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    background-color: var(--bg-secondary);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: var(--shadow-md);
-    margin-bottom: 2rem;
-    border: 1px solid var(--border-color);
-}
-
 .subscription-summary {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
 }
 
 .summary-card {
     background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    color: #000;
-    padding: 1.5rem;
+    color: #000000;
+    padding: 2rem;
     border-radius: 12px;
     text-align: center;
     box-shadow: var(--shadow-md);
 }
 
 .summary-card h4 {
-    font-size: 0.95rem;
-    margin-bottom: 0.5rem;
-    color: #000;
+    color: #000000;
+    margin-bottom: 1rem;
 }
 
 .summary-card p {
+    color: #000000;
     font-size: 1.8rem;
     font-weight: 700;
-    color: #000;
-}
-
-.subscriptions-list {
-    background-color: var(--bg-secondary);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: var(--shadow-md);
-    border: 1px solid var(--border-color);
 }
 
 .subs-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
 .subscription-card {
-    background-color: var(--bg-tertiary);
-    padding: 1.5rem;
+    background-color: var(--bg-secondary);
+    padding: 2rem;
     border-radius: 12px;
-    border-left: 4px solid var(--warning-color);
-    display: flex;
-    flex-direction: column;
-}
-
-.subscription-card h5 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-    color: var(--text-primary);
-}
-
-.subscription-details {
-    font-size: 0.9rem;
-    color: var(--text-body);
-    flex: 1;
-}
-
-.subscription-details p {
-    margin-bottom: 0.5rem;
-}
-
-.subscription-cost {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin: 1rem 0;
-}
-
-.subscription-actions {
-    display: flex;
-    gap: 0.5rem;
-    margin-top: 1rem;
-}
-
-.subscription-actions button {
-    flex: 1;
-    padding: 0.5rem;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 0.85rem;
+    border-left: 4px solid var(--primary-color);
+    box-shadow: var(--shadow-sm);
     transition: var(--transition);
 }
 
-.delete-sub-btn {
-    background-color: var(--danger-color);
-    color: white;
+.subscription-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(38, 255, 119, 0.2);
 }
 
-.delete-sub-btn:hover {
-    background-color: #dc2626;
+.subscription-card h4 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
 }
 
-/* ============================================
-   Empty States
-   ============================================ */
+.sub-details {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
 
-.empty-state {
-    text-align: center;
-    padding: 3rem 2rem;
+.sub-details label {
     color: var(--text-body);
 }
 
-.empty-state p {
-    font-size: 1.1rem;
+.sub-details span {
+    color: var(--text-primary);
+    font-weight: 600;
 }
 
-/* ============================================
-   Footer
-   ============================================ */
+.sub-cost {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    text-align: right;
+}
 
-.footer {
-    background-color: var(--bg-primary);
-    border-top: 2px solid var(--primary-color);
-    padding: 2rem;
-    text-align: center;
-    color: var(--text-body);
-    margin-top: 3rem;
+.sub-cost span {
+    color: var(--primary-light);
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 
 /* ============================================
@@ -850,14 +791,13 @@ small {
     }
 
     .calculator-grid,
-    .tracker-input,
-    .savings-input,
-    .subscription-input {
+    .tracker-stats,
+    .subscription-summary {
         grid-template-columns: 1fr;
     }
 
-    section h2 {
-        font-size: 2rem;
+    .features {
+        grid-template-columns: 1fr;
     }
 
     .expense-table {
@@ -869,40 +809,45 @@ small {
         padding: 0.75rem;
     }
 
-    .results {
-        grid-template-columns: 1fr;
-    }
-
     .section-header {
         flex-direction: column;
-        align-items: flex-start;
         gap: 1rem;
     }
 
-    .clear-btn {
-        width: 100%;
+    .logo {
+        font-size: 1.1rem;
+    }
+
+    .logo-icon {
+        width: 32px;
+        height: 32px;
     }
 }
 
 @media (max-width: 480px) {
+    .nav-menu {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
     .hero h1 {
         font-size: 1.8rem;
     }
 
-    .nav-menu {
-        gap: 0.5rem;
-        font-size: 0.8rem;
+    .calculator-grid {
+        gap: 1rem;
     }
 
-    section {
-        padding: 1.5rem 1rem;
+    .calculator-card {
+        padding: 1.5rem;
     }
 
-    .calculator-card,
-    .goal-card,
-    .subscription-card,
-    .tracker-section,
-    .subscriptions-list {
-        padding: 1.5rem 1rem;
+    .logo {
+        font-size: 1rem;
+    }
+
+    .logo-icon {
+        width: 28px;
+        height: 28px;
     }
 }
