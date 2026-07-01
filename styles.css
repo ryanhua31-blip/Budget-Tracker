@@ -200,8 +200,7 @@ body {
 
 .cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.4);
-    background-color: #f0f0f0;
+    box-shadow: 0 15px 30px rgba(38, 255, 119, 0.3);
 }
 
 /* ============================================
@@ -219,73 +218,78 @@ body {
     background-color: var(--bg-secondary);
     padding: 2rem;
     border-radius: 12px;
-    border: 1px solid var(--border-color);
     text-align: center;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
     transition: var(--transition);
-    box-shadow: var(--shadow-sm);
 }
 
 .feature-card:hover {
     transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
     border-color: var(--primary-color);
-    box-shadow: 0 8px 16px rgba(38, 255, 119, 0.2);
 }
 
 .feature-icon {
-    width: 120px;
-    height: 120px;
+    width: 60px;
+    height: 60px;
     margin: 0 auto 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3.5rem;
-    background: linear-gradient(135deg, rgba(38, 255, 119, 0.1), rgba(38, 255, 119, 0.05));
+    font-size: 2rem;
     border-radius: 12px;
-    border: 1px solid rgba(38, 255, 119, 0.2);
+    background-color: rgba(38, 255, 119, 0.1);
 }
 
 .feature-icon img {
-    width: 80%;
-    height: 80%;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
 }
 
 .feature-card h3 {
-    color: var(--text-primary);
-    margin-bottom: 0.75rem;
     font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
 }
 
 .feature-card p {
-    color: var(--text-body);
     font-size: 0.95rem;
+    color: var(--text-body);
 }
 
 /* ============================================
-   Typography
+   Budget Calculator Section
    ============================================ */
-
-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--text-primary);
-}
 
 .section-subtitle {
-    color: var(--text-body);
     font-size: 1.1rem;
+    color: var(--text-body);
     margin-bottom: 2rem;
+    text-align: center;
 }
 
-section h4 {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.calculator-card {
+    background-color: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+}
+
+.calculator-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
     color: var(--text-primary);
 }
-
-/* ============================================
-   Forms & Inputs
-   ============================================ */
 
 .input-group {
     margin-bottom: 1.5rem;
@@ -294,492 +298,393 @@ section h4 {
 .input-group label {
     display: block;
     margin-bottom: 0.5rem;
-    font-weight: 600;
-    color: var(--text-primary);
+    color: var(--text-body);
+    font-weight: 500;
 }
 
-input[type="text"],
-input[type="number"],
-input[type="date"],
-select {
+.calculator-card input,
+.calculator-card select {
     width: 100%;
-    padding: 0.75rem 1rem;
-    border: 2px solid var(--border-color);
-    border-radius: 8px;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: #0f0f0f;
+    color: var(--text-primary);
     font-size: 1rem;
     transition: var(--transition);
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
 }
 
-input[type="text"]:focus,
-input[type="number"]:focus,
-input[type="date"]:focus,
-select:focus {
+.calculator-card input:focus,
+.calculator-card select:focus {
     outline: none;
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px rgba(38, 255, 119, 0.1);
 }
 
-input[type="text"]::placeholder,
-input[type="number"]::placeholder {
-    color: #888;
-}
-
-small {
+.calculator-card small {
+    display: block;
+    margin-top: 0.5rem;
     color: var(--text-secondary);
     font-size: 0.85rem;
 }
 
-/* ============================================
-   Buttons
-   ============================================ */
-
-.calculate-btn,
-.add-btn {
-    background-color: var(--primary-color);
-    color: #000000;
-    border: none;
-    padding: 0.75rem 2rem;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-    width: 100%;
-}
-
-.calculate-btn:hover,
-.add-btn:hover {
-    background-color: var(--primary-light);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-}
-
-.calculate-btn:active,
-.add-btn:active {
-    transform: translateY(0);
-}
-
-.clear-btn,
-.delete-btn {
-    background-color: var(--danger-color);
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: var(--transition);
-    font-size: 0.9rem;
-}
-
-.clear-btn:hover,
-.delete-btn:hover {
-    background-color: #dc2626;
-    transform: scale(1.05);
-}
-
-/* ============================================
-   Budget Calculator Section
-   ============================================ */
-
-.calculator-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-
-.calculator-card {
-    background-color: var(--bg-primary);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: var(--shadow-md);
-    border-left: 4px solid var(--primary-color);
-}
-
-.calculator-card h3 {
-    color: var(--text-primary);
-    margin-bottom: 1.5rem;
-}
-
-.results {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
+.budget-results {
     margin-top: 2rem;
-}
-
-.results.hidden {
-    display: none;
-}
-
-.result-card {
-    background-color: var(--bg-primary);
-    padding: 1.5rem;
+    padding: 2rem;
+    background-color: var(--bg-secondary);
     border-radius: 12px;
-    box-shadow: var(--shadow-md);
-    text-align: center;
+    border: 1px solid var(--border-color);
 }
 
-.result-card h4 {
-    margin-bottom: 1rem;
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    font-weight: 600;
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+.result-label {
+    color: var(--text-body);
 }
 
 .result-value {
-    font-size: 2rem;
-    font-weight: 700;
-}
-
-.income-card {
-    border-top: 3px solid var(--success-color);
-}
-
-.income-card .result-value {
-    color: var(--success-color);
-}
-
-.expense-card {
-    border-top: 3px solid var(--danger-color);
-}
-
-.expense-card .result-value {
-    color: var(--danger-color);
-}
-
-.balance-card {
-    border-top: 3px solid var(--primary-color);
-}
-
-.balance-card .result-value {
+    font-weight: 600;
     color: var(--primary-color);
-}
-
-.budget-breakdown {
-    grid-column: 1 / -1;
-    background-color: var(--bg-primary);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: var(--shadow-md);
-}
-
-.budget-breakdown h4 {
-    margin-bottom: 1.5rem;
-}
-
-/* ============================================
-   Chart Styles
-   ============================================ */
-
-.chart {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.chart-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.chart-label {
-    width: 120px;
-    font-weight: 600;
-    font-size: 0.9rem;
-}
-
-.chart-bar {
-    flex: 1;
-    height: 30px;
-    background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
-    border-radius: 6px;
-    position: relative;
-    overflow: hidden;
-}
-
-.chart-value {
-    padding: 0.25rem 0.5rem;
-    color: #000000;
-    font-size: 0.85rem;
-    font-weight: 600;
-    line-height: 30px;
 }
 
 /* ============================================
    Expense Tracker Section
    ============================================ */
 
-.tracker-input {
+.tracker-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.expense-form {
     background-color: var(--bg-secondary);
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: var(--shadow-md);
-    margin-bottom: 2rem;
-}
-
-.tracker-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.stat-card {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    color: #000000;
-    padding: 1.5rem;
-    border-radius: 12px;
-    text-align: center;
+    border: 1px solid var(--border-color);
     box-shadow: var(--shadow-md);
 }
 
-.stat-card h4 {
-    color: #000000;
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
+.expense-form h3 {
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
 }
 
-.stat-card p {
-    color: #000000;
-    font-size: 1.8rem;
-    font-weight: 700;
-}
-
-.tracker-section {
-    margin-top: 3rem;
-}
-
-.tracker-section h4 {
+.expense-form .input-group {
     margin-bottom: 1.5rem;
 }
 
-.section-header {
+.expense-list {
+    background-color: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+}
+
+.expense-list h3 {
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.expense-item {
+    background-color: #0f0f0f;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.5rem;
 }
 
-.section-header h4 {
-    margin: 0;
+.expense-info h4 {
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
 }
 
-/* ============================================
-   Table Styles
-   ============================================ */
-
-.expense-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: var(--bg-secondary);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
-}
-
-.expense-table thead {
-    background-color: var(--bg-tertiary);
-}
-
-.expense-table th {
+.expense-info p {
     color: var(--text-secondary);
-    padding: 1rem;
-    text-align: left;
+    font-size: 0.85rem;
+}
+
+.expense-amount {
+    font-size: 1.25rem;
     font-weight: 600;
-    border-bottom: 2px solid var(--border-color);
-}
-
-.expense-table td {
-    color: var(--text-body);
-    padding: 1rem;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.expense-table tbody tr:hover {
-    background-color: var(--bg-tertiary);
-}
-
-.expense-table tbody tr:last-child td {
-    border-bottom: none;
-}
-
-.empty-row td {
-    text-align: center;
-    padding: 2rem;
-    color: #888;
+    color: var(--primary-color);
 }
 
 .delete-btn {
-    background-color: var(--danger-color);
+    background-color: #ef4444;
     color: white;
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 0.85rem;
     transition: var(--transition);
+    font-size: 0.85rem;
 }
 
 .delete-btn:hover {
-    background-color: #ff5555;
+    background-color: #dc2626;
+}
+
+@media (max-width: 768px) {
+    .tracker-container {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ============================================
-   Savings Goals Section
+   Savings Goal Section
    ============================================ */
 
-.goals-list {
+.savings-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
     margin-top: 2rem;
 }
 
-.goal-card {
+.goal-form {
     background-color: var(--bg-secondary);
     padding: 2rem;
     border-radius: 12px;
     border: 1px solid var(--border-color);
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-md);
 }
 
-.goal-card h4 {
+.goal-form h3 {
+    margin-bottom: 1.5rem;
     color: var(--text-primary);
+}
+
+.goal-form .input-group {
+    margin-bottom: 1.5rem;
+}
+
+.goals-list {
+    background-color: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+}
+
+.goals-list h3 {
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.goal-item {
+    background-color: #0f0f0f;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.goal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 1rem;
 }
 
-.goal-progress {
-    background-color: var(--bg-primary);
-    border-radius: 8px;
-    height: 12px;
-    overflow: hidden;
-    margin: 1rem 0;
+.goal-name {
+    color: var(--text-primary);
+    font-weight: 600;
 }
 
-.goal-progress-bar {
+.goal-amount {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.progress-bar {
+    background-color: var(--bg-secondary);
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+    background-color: var(--primary-color);
     height: 100%;
-    background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
-    border-radius: 8px;
     transition: var(--transition);
 }
 
-.goal-info {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
-}
-
-.goal-info span {
+.progress-text {
+    font-size: 0.85rem;
     color: var(--text-body);
 }
 
-.empty-state {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: 3rem 2rem;
-    background-color: var(--bg-secondary);
-    border-radius: 12px;
-    border: 1px dashed var(--border-color);
-    color: #888;
+@media (max-width: 768px) {
+    .savings-container {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ============================================
    Subscriptions Section
    ============================================ */
 
-.subscription-summary {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
+.subscriptions-container {
+    margin-top: 2rem;
 }
 
-.summary-card {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    color: #000000;
+.subscription-input {
+    background-color: var(--bg-secondary);
     padding: 2rem;
     border-radius: 12px;
-    text-align: center;
+    border: 1px solid var(--border-color);
     box-shadow: var(--shadow-md);
+    margin-bottom: 2rem;
 }
 
-.summary-card h4 {
-    color: #000000;
+.subscription-input h3 {
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.subscription-input .input-group {
     margin-bottom: 1rem;
 }
 
-.summary-card p {
-    color: #000000;
-    font-size: 1.8rem;
-    font-weight: 700;
-}
-
-.subs-container {
+.subscriptions-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
 }
 
 .subscription-card {
     background-color: var(--bg-secondary);
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 12px;
-    border-left: 4px solid var(--primary-color);
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
 }
 
-.subscription-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 16px rgba(38, 255, 119, 0.2);
-}
-
-.subscription-card h4 {
-    color: var(--text-primary);
+.subscription-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
     margin-bottom: 1rem;
 }
 
-.sub-details {
-    display: flex;
-    justify-content: space-between;
-    margin: 0.5rem 0;
-    font-size: 0.9rem;
+.subscription-name {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1.1rem;
 }
 
-.sub-details label {
+.subscription-cost {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.subscription-date {
+    color: var(--text-body);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.delete-btn {
+    width: 100%;
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.delete-btn:hover {
+    background-color: #dc2626;
+}
+
+/* ============================================
+   Buttons & Actions
+   ============================================ */
+
+.add-btn {
+    background-color: var(--primary-color);
+    color: #000000;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+    width: 100%;
+}
+
+.add-btn:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+.clear-btn {
+    background-color: var(--border-color);
+    color: var(--text-primary);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.clear-btn:hover {
+    background-color: var(--bg-tertiary);
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    text-align: center;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
     color: var(--text-body);
 }
 
-.sub-details span {
-    color: var(--text-primary);
-    font-weight: 600;
-}
-
-.sub-cost {
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--border-color);
-    text-align: right;
-}
-
-.sub-cost span {
-    color: var(--primary-light);
-    font-size: 1.2rem;
-    font-weight: 700;
+.empty-state p {
+    font-size: 1.1rem;
 }
 
 /* ============================================
    Responsive Design
    ============================================ */
+
+@media (max-width: 1024px) {
+    .calculator-grid,
+    .subscriptions-list {
+        grid-template-columns: 1fr;
+    }
+}
 
 @media (max-width: 768px) {
     .hero h1 {
@@ -790,64 +695,24 @@ small {
         font-size: 1rem;
     }
 
-    .calculator-grid,
-    .tracker-stats,
-    .subscription-summary {
-        grid-template-columns: 1fr;
+    .section {
+        padding: 2rem 1rem;
     }
 
-    .features {
-        grid-template-columns: 1fr;
+    h2 {
+        font-size: 2rem;
     }
 
-    .expense-table {
-        font-size: 0.9rem;
-    }
-
-    .expense-table th,
-    .expense-table td {
-        padding: 0.75rem;
-    }
-
-    .section-header {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .logo {
-        font-size: 1.1rem;
-    }
-
-    .logo-icon {
-        width: 32px;
-        height: 32px;
-    }
-}
-
-@media (max-width: 480px) {
-    .nav-menu {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .hero h1 {
-        font-size: 1.8rem;
-    }
-
-    .calculator-grid {
-        gap: 1rem;
-    }
-
-    .calculator-card {
+    .feature-card {
         padding: 1.5rem;
     }
 
-    .logo {
-        font-size: 1rem;
-    }
-
-    .logo-icon {
-        width: 28px;
-        height: 28px;
+    .calculator-card,
+    .goal-form,
+    .goals-list,
+    .subscription-input,
+    .expense-form,
+    .expense-list {
+        padding: 1.5rem;
     }
 }
